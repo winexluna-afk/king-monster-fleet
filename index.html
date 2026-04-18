@@ -923,7 +923,7 @@ function generateInvoice() {
         <div class="invoice-section">
           <div class="invoice-section-title">📊 Distribución</div>
           <div class="invoice-row"><span>− White Lane 12%</span><span style="color:var(--gold)">(${fmt(s.company12)})</span></div>
-          <div class="invoice-row"><span>Base driver (Gross−12%)</span><span>${fmt(gross-s.company12)}</span></div>
+          <div class="invoice-row"><span>Base driver (Gross−12%)</span><span>${fmt(s.gross-s.company12)}</span></div>
           <div class="invoice-row"><span>Driver 30% de base</span><span style="color:var(--green)">${fmt(s.driver30)}</span></div>
         </div>
         <div class="invoice-section">
@@ -951,8 +951,8 @@ function truckBlock(truck,s){
   return`<div class="invoice-section">
     <div class="invoice-section-title">🚛 ${truck==='truck1'?'TRUCK #1 — DRIVER PRINCIPAL':'TRUCK #2 — EMPLEADO'} (${s.entries.filter(e=>e.type==='rate').length} movidas)</div>
     <div class="invoice-row"><span>Gross</span><span style="color:var(--gold)">${fmt(s.gross)}</span></div>
-    <div class="invoice-row"><span>Driver 30%</span><span style="color:var(--green)">${fmt(s.driver30)}</span></div>
-    <div class="invoice-row"><span>White Lane 12%</span><span>${fmt(s.company12)}</span></div>
+    <div class="invoice-row"><span>− White Lane 12%</span><span style="color:var(--blue)">(${fmt(s.company12)})</span></div>
+    <div class="invoice-row"><span>Driver 30% de base</span><span style="color:var(--green)">${fmt(s.driver30)}</span></div>
     <div class="invoice-row"><span>Gastos</span><span style="color:var(--red)">(${fmt(s.totalExpenses)})</span></div>
     <div class="invoice-row" style="font-weight:600"><span>Neto Driver</span><span style="color:var(--green)">${fmt(s.net)}</span></div>
   </div>`;
